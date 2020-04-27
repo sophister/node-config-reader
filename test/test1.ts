@@ -3,7 +3,7 @@ import envLoad from '../src/index';
 
 const finalConfig = envLoad({
     configDir: __dirname,
-    defaultEvn: 'default',
+    defaultEnv: 'default',
     currentEnv: 'dev'
 });
 

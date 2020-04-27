@@ -7,7 +7,7 @@ declare function defaultConfigFileNameResolver(envName: string): string;
 export declare type FileNameResolver = typeof defaultConfigFileNameResolver;
 interface Args {
     configDir: string;
-    defaultEvn?: string;
+    defaultEnv?: string;
     currentEnv: string;
     fileNameResolver?: FileNameResolver;
 }

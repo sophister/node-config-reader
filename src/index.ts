@@ -32,7 +32,7 @@ export function mergeConfigFiles<T = any>(confArray: string[]): T {
  * @param envName env name, such as 'default', 'production', 'dev'
  */
 function defaultConfigFileNameResolver(envName: string): string {
-    return `config.${envName}.js`;
+    return `config.${envName}`;
 }
 
 export type FileNameResolver = typeof defaultConfigFileNameResolver;
@@ -41,7 +41,7 @@ interface Args {
     // absolute path to config dir
     configDir: string;
     // default env name
-    defaultEvn?: string;
+    defaultEnv?: string;
     // current env
     currentEnv: string;
     // function to resolve config file name based on env
@@ -56,10 +56,10 @@ interface Args {
  */
 export default function loadConfig<T = any>(args: Args): T {
     const envNames = [];
-    if (args.defaultEvn) {
-        envNames.push(args.defaultEvn);
+    if (args.defaultEnv) {
+        envNames.push(args.defaultEnv);
     }
-    if (args.currentEnv && args.currentEnv !== args.defaultEvn) {
+    if (args.currentEnv && args.currentEnv !== args.defaultEnv) {
         envNames.push(args.currentEnv);
     }
     const fileNameResolver = args.fileNameResolver || defaultConfigFileNameResolver;

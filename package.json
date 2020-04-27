@@ -1,6 +1,6 @@
 {
   "name": "node-config-reader",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "load and merge node config files for multiple env support",
   "main": "build/index.js",
   "types": "build/index.d.ts",

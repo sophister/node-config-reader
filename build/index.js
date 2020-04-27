@@ -33,7 +33,7 @@ exports.mergeConfigFiles = mergeConfigFiles;
  * @param envName env name, such as 'default', 'production', 'dev'
  */
 function defaultConfigFileNameResolver(envName) {
-    return "config." + envName + ".js";
+    return "config." + envName;
 }
 /**
  *
@@ -43,10 +43,10 @@ function defaultConfigFileNameResolver(envName) {
  */
 function loadConfig(args) {
     var envNames = [];
-    if (args.defaultEvn) {
-        envNames.push(args.defaultEvn);
+    if (args.defaultEnv) {
+        envNames.push(args.defaultEnv);
     }
-    if (args.currentEnv && args.currentEnv !== args.defaultEvn) {
+    if (args.currentEnv && args.currentEnv !== args.defaultEnv) {
         envNames.push(args.currentEnv);
     }
     var fileNameResolver = args.fileNameResolver || defaultConfigFileNameResolver;

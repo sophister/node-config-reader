@@ -17,7 +17,7 @@ import envLoad from 'node-config-reader';
 
 const finalConfig = envLoad({
     configDir: __dirname,
-    defaultEvn: 'default',
+    defaultEnv: 'default',
     currentEnv: 'dev',
 });
 ```
@@ -33,20 +33,20 @@ type FileNameResolver = (envName: string) => string;
  * @param envName env name, such as 'default', 'production', 'dev'
  */
 function defaultConfigFileNameResolver(envName: string): string {
-    return `config.${envName}.js`;
+    return `config.${envName}`;
 }
 
 interface Args {
     // absolute path to config dir
     configDir: string;
     // default env name
-    defaultEvn?: string;
+    defaultEnv?: string;
     // current env
     currentEnv: string;
     // function to resolve config file name based on env
     fileNameResolver?: FileNameResolver;
 }
 
-Type EnvLoad<T = any> = (args: Args) => T;
+type EnvLoad<T = any> = (args: Args) => T;
 
 ```
