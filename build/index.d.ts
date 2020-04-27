@@ -1,4 +1,4 @@
-export declare function mergeConfigFiles(confArray: string[]): any;
+export declare function mergeConfigFiles<T = any>(confArray: string[]): T;
 /**
  * default env config file name resolver
  * @param envName env name, such as 'default', 'production', 'dev'
@@ -17,5 +17,5 @@ interface Args {
  * @param currentEnv
  * @param fileNameResolver
  */
-export default function loadConfig(args: Args): any;
+export default function loadConfig<T = any>(args: Args): T;
 export {};

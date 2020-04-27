@@ -16,8 +16,8 @@ function mergeHandle(objValue: any, srcValue: any) {
     }
 }
 
-export function mergeConfigFiles(confArray: string[]): any {
-    let out = {};
+export function mergeConfigFiles<T = any>(confArray: string[]): T {
+    let out: T = {} as T;
 
     confArray.forEach((file) => {
         let conf = require(file);
@@ -54,7 +54,7 @@ interface Args {
  * @param currentEnv 
  * @param fileNameResolver 
  */
-export default function loadConfig(args: Args) {
+export default function loadConfig<T = any>(args: Args): T {
     const envNames = [];
     if (args.defaultEvn) {
         envNames.push(args.defaultEvn);
