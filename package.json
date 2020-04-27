@@ -1,13 +1,19 @@
 {
   "name": "node-config-reader",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "load and merge node config files for multiple env support",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "test": "ts-node ./test/test1.ts",
-    "prepublish": "npm run build",
-    "build": "rm -rf ./build && tsc --project tsconfig.json"
+    "prepublishOnly": "npm run build",
+    "build": "tsc"
   },
+  "files": [
+    "src",
+    "build",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sophister/node-config-reader.git"
